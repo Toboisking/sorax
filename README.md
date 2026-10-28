@@ -1,6 +1,10 @@
 <p align="center">
   <a href="https://github.com/Toboisking/sorax">
-    <img src="packages/console/app/src/asset/logo-ornate-dark.svg" alt="SORAX logo" width="420">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="packages/console/app/src/asset/brand/sorax-wordmark-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="packages/console/app/src/asset/brand/sorax-wordmark-light.svg">
+      <img src="packages/console/app/src/asset/brand/sorax-wordmark-light.svg" alt="SORAX" width="420">
+    </picture>
   </a>
 </p>
 
@@ -21,9 +25,8 @@
 ## Overview
 
 SORAX is a full-featured AI coding agent you can run locally — terminal CLI, background
-service and a built-in web UI. It is a fork of [opencode](https://github.com/sst/opencode),
-rebuilt and extended with model routing, agent packs, MCP integration and automatic
-content-filter failover.
+service and a built-in web UI, rebuilt and extended with model routing, agent packs,
+MCP integration and automatic content-filter failover.
 
 **Owner:** [@Ghostofhackers](https://t.me/Ghostofhackers) — Telegram: [t.me/Ghostofhackers](https://t.me/Ghostofhackers)
 
@@ -175,7 +178,7 @@ packages/
 
 ## License
 
-[MIT](LICENSE) — © 2025 opencode, © 2026 SORAX.
+[MIT](LICENSE) — © 2026 SORAX contributors. See `LICENSE` for upstream attribution.
 
 ## Owner
 
