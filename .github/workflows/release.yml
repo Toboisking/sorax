@@ -1,0 +1,65 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version without the v prefix (e.g. 2.1.5)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+
+      - uses: ./.github/actions/setup-bun
+
+      - name: Resolve version
+        id: version
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            V="${{ inputs.version }}"
+          else
+            V="${GITHUB_REF_NAME#v}"
+          fi
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        working-directory: packages/cli
+        env:
+          SORAX_CHANNEL: latest
+          SORAX_VERSION: ${{ steps.version.outputs.version }}
+        run: bun run build
+
+      - name: Package release assets
+        shell: bash
+        run: |
+          mkdir -p pkg
+          cp packages/cli/dist/cli-windows-x64/bin/sorax.exe    pkg/sorax-windows-x64.exe
+          cp packages/cli/dist/cli-windows-arm64/bin/sorax.exe  pkg/sorax-windows-arm64.exe
+          cp packages/cli/dist/cli-darwin-x64/bin/sorax         pkg/sorax-darwin-x64
+          cp packages/cli/dist/cli-darwin-arm64/bin/sorax       pkg/sorax-darwin-arm64
+          cp packages/cli/dist/cli-linux-x64/bin/sorax          pkg/sorax-linux-x64
+          cp packages/cli/dist/cli-linux-arm64/bin/sorax        pkg/sorax-linux-arm64
+          chmod +x pkg/sorax-darwin-* pkg/sorax-linux-*
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v${{ steps.version.outputs.version }}" pkg/* \
+            --title "SORAX v${{ steps.version.outputs.version }}" \
+            --notes "SORAX v${{ steps.version.outputs.version }} — update an existing install with: sorax upgrade"

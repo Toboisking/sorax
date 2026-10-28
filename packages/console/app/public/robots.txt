@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow shared content pages
+Disallow: /s/
+Disallow: /share/
+
+Sitemap: https://sorax.ai/sitemap.xml
+Sitemap: https://sorax.ai/v2/sitemap.xml
+Sitemap: https://sorax.ai/data/sitemap.xml

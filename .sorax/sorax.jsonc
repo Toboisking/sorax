@@ -1,0 +1,19 @@
+{
+  "$schema": "https://sorax.ai/config.json",
+  "provider": {},
+  "permission": {},
+  "references": {
+    "effect": {
+      "repository": "github.com/Effect-TS/effect-smol",
+      "description": "Use for Effect v4 and effect-smol implementation details",
+    },
+    "sorax-local": {
+      "path": "~/.local/share/sorax",
+      "description": "Contains sorax logs and data",
+    },
+  },
+  "mcp": {},
+  "tools": {
+    "github-pr-search": false,
+  },
+}

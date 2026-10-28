@@ -1,0 +1,143 @@
+---
+title: "Plugins"
+---
+
+Add published packages, versioned packages, scoped packages, or local plugin directories to `sorax.json(c)`.
+
+## Configure
+
+```jsonc title="sorax.jsonc"
+{
+  "$schema": "https://sorax.ai/config.json",
+  "plugins": [
+    "sorax-acme-plugin",
+    "sorax-acme-plugin@1.2.0",
+    "@acme/sorax-plugin",
+    "./plugins/local",
+    "../shared/plugin",
+    "/absolute/path/plugin",
+    "file:///home/me/plugins/local",
+    {
+      "package": "@acme/sorax-plugin",
+      "options": {
+        "agent": "reviewer",
+        "strict": true,
+      },
+    },
+  ],
+}
+```
+
+Relative paths resolve from the config file containing the entry.
+
+Configured local paths must be directories. SORAX loads the directory's `server` or `index` module, such as
+`index.ts`. A path to a single file is skipped.
+
+Plugin arrays from applicable config files are applied from lowest to highest precedence instead of replacing one another.
+
+```text
+~/.config/sorax/sorax.jsonc
+./sorax.jsonc
+./.sorax/sorax.jsonc
+```
+
+## Discover
+
+SORAX also loads direct `.ts` and `.js` files and immediate plugin package directories from every discovered
+`.sorax/plugins/` directory.
+
+```text
+.sorax/
+└── plugins/
+    ├── concise.ts
+    ├── reviewer.js
+    └── acme-package/
+```
+
+Global plugins use the same discovery layout under the SORAX config directory.
+
+```text
+~/.config/sorax/plugins/
+```
+
+A `plugins/` directory beside a project-root `sorax.json(c)` is not discovered automatically; configure its plugin
+directories explicitly or move it under `.sorax/`.
+
+```jsonc title="sorax.jsonc"
+{
+  "plugins": ["./plugins/local"]
+}
+```
+
+## Control
+
+Plugin entries are processed in order. Prefix an ID or wildcard with `-` to disable it, use `*` for every plugin, and
+use `.*` to match an ID prefix. A later ID re-enables a plugin.
+
+```jsonc title="sorax.jsonc"
+{
+  "plugins": ["*", "-sorax.provider.*", "sorax.provider.openai", "-acme.reviewer"]
+}
+```
+
+Two built-in plugins ignore removals so that a repository cannot switch off
+[policy](/policies) enforcement: `sorax.config.policy` and
+`sorax.provider.sorax`, the Console connection that delivers organization
+policy.
+
+## Manage
+
+Install, list, check, update, or remove global package plugins with the CLI.
+
+```sh
+sorax plugin add sorax-acme-plugin@1.2.0
+sorax plugin list
+sorax plugin list --builtin
+sorax plugin check
+sorax plugin update
+sorax plugin update sorax-acme-plugin
+sorax plugin remove sorax-acme-plugin@1.2.0
+```
+
+`plugin check` checks server and TUI-only package plugins for updates. `plugin update` updates every outdated package;
+pass a configured package target to check or update only that package. Local plugins and exact package revisions are skipped.
+
+Package installation accepts npm names with versions, tags, or ranges, plus npm-compatible Git package specifications.
+Git repositories can use hosted shortcuts, HTTPS, or SSH, including private repositories available through your existing
+Git credentials.
+
+```sh
+sorax plugin add @acme/sorax-plugin@latest
+sorax plugin add github:acme/sorax-plugin
+sorax plugin add git+ssh://git@github.com/acme/sorax-plugin.git#main
+sorax plugin add 'github:acme/plugins#main::path:packages/sorax-plugin'
+```
+
+Branches, tags, complete commit hashes, and npm's `::path:` repository-subdirectory selectors are supported. Configure
+local paths directly; tarball and npm alias targets are not accepted by `plugin add`.
+
+## Reload
+
+Changes under watched config directories reload automatically. Server startup loads cached package plugins immediately,
+installs missing packages in the background, and checks unpinned npm and Git plugins for updates without changing the
+installed package. Exact npm versions and full Git commit hashes stay pinned. Changes to unwatched local dependencies may
+still require restarting SORAX.
+
+```sh
+touch .sorax/plugins/concise/index.ts
+sorax service restart
+```
+
+## Terminal
+
+CLI-only plugins are configured separately and remain active when connected to a remote server.
+
+```json title="cli.json"
+{
+  "plugins": ["sorax-acme-cli"]
+}
+```
+
+<Card title="Build a plugin" href="/build/plugins">
+  Create plugins that add tools, hooks, integrations, commands, agents, and other behavior.
+</Card>

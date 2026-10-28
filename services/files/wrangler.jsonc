@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sorax-files",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "env": {
+    "dev": {
+      "name": "sorax-dev-files",
+      "routes": [{ "pattern": "dev.sorax.ai/files/*", "zone_name": "sorax.ai" }],
+      "r2_buckets": [{ "binding": "FILES", "bucket_name": "sorax-dev-files" }],
+    },
+    "production": {
+      "name": "sorax-production-files",
+      "routes": [{ "pattern": "sorax.ai/files/*", "zone_name": "sorax.ai" }],
+      "r2_buckets": [{ "binding": "FILES", "bucket_name": "sorax-production-files" }],
+    },
+  },
+}

@@ -1,0 +1,76 @@
+---
+title: Ecosystem
+description: Projects and integrations built with SORAX.
+---
+
+A collection of community projects built on SORAX.
+
+:::note
+Want to add your SORAX related project to this list? Submit a PR.
+:::
+
+You can also check out [awesome-sorax](https://github.com/awesome-sorax/awesome-sorax) and [sorax.cafe](https://sorax.cafe), a community that aggregates the ecosystem and community.
+
+---
+
+## Plugins
+
+| Name                                                                                               | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| [sorax-daytona](https://github.com/daytona/integrations/tree/main/packages/sorax-plugin)     | Automatically run SORAX sessions in isolated Daytona sandboxes with git sync and live previews                                |
+| [sorax-helicone-session](https://github.com/H2Shami/sorax-helicone-session)                  | Automatically inject Helicone session headers for request grouping                                                               |
+| [sorax-type-inject](https://github.com/nick-vi/sorax-type-inject)                            | Auto-inject TypeScript/Svelte types into file reads with lookup tools                                                            |
+| [sorax-openai-codex-auth](https://github.com/numman-ali/sorax-openai-codex-auth)             | Use your ChatGPT Plus/Pro subscription instead of API credits                                                                    |
+| [sorax-gemini-auth](https://github.com/jenslys/sorax-gemini-auth)                            | Use your existing Gemini plan instead of API billing                                                                             |
+| [sorax-antigravity-auth](https://github.com/NoeFabris/sorax-antigravity-auth)                | Use Antigravity's free models instead of API billing                                                                             |
+| [sorax-dynamic-context-pruning](https://github.com/Tarquinen/sorax-dynamic-context-pruning)  | Optimize token usage by pruning obsolete tool outputs                                                                            |
+| [sorax-vibeguard](https://github.com/inkdust2021/sorax-vibeguard)                            | Redact secrets/PII into VibeGuard-style placeholders before LLM calls; restore locally                                           |
+| [sorax-websearch-cited](https://github.com/ghoulr/sorax-websearch-cited.git)                 | Add native websearch support for supported providers with Google grounded style                                                  |
+| [sorax-pty](https://github.com/shekohex/sorax-pty.git)                                       | Enables AI agents to run background processes in a PTY, send interactive input to them.                                          |
+| [sorax-shell-strategy](https://github.com/JRedeker/sorax-shell-strategy)                     | Instructions for non-interactive shell commands - prevents hangs from TTY-dependent operations                                   |
+| [sorax-wakatime](https://github.com/angristan/sorax-wakatime)                                | Track SORAX usage with Wakatime                                                                                               |
+| [sorax-md-table-formatter](https://github.com/franlol/sorax-md-table-formatter/tree/main)    | Clean up markdown tables produced by LLMs                                                                                        |
+| [sorax-morph-fast-apply](https://github.com/JRedeker/sorax-morph-fast-apply)                 | 10x faster code editing with Morph Fast Apply API and lazy edit markers                                                          |
+| [sorax-morph-plugin](https://github.com/morphllm/sorax-morph-plugin)                         | Fast Apply editing, WarpGrep codebase search, and context compaction via Morph                                                   |
+| [oh-my-sorax](https://github.com/code-yeongyu/oh-my-sorax)                                   | Background agents, pre-built LSP/AST/MCP tools, curated agents, Claude Code compatible                                           |
+| [sorax-notifier](https://github.com/mohak34/sorax-notifier)                                  | Desktop notifications and sound alerts for permission, completion, and error events                                              |
+| [sorax-zellij-namer](https://github.com/24601/sorax-zellij-namer)                            | AI-powered automatic Zellij session naming based on SORAX context                                                             |
+| [sorax-supermemory](https://github.com/supermemoryai/sorax-supermemory)                      | Persistent memory across sessions using Supermemory                                                                              |
+| [@plannotator/sorax](https://github.com/backnotprop/plannotator/tree/main/apps/sorax-plugin) | Interactive plan review with visual annotation and private/offline sharing                                                       |
+| [@openspoon/subtask2](https://github.com/spoons-and-mirrors/subtask2)                              | Extend sorax /commands into a powerful orchestration system with granular flow control                                        |
+| [sorax-scheduler](https://github.com/different-ai/sorax-scheduler)                           | Schedule recurring jobs using launchd (Mac) or systemd (Linux) with cron syntax                                                  |
+| [sorax-conductor](https://github.com/derekbar90/sorax-conductor)                             | Protocol-Driven Workflow: Automation of the Context -> Spec -> Plan -> Implement lifecycle.                                      |
+| [micode](https://github.com/vtemian/micode)                                                        | Structured Brainstorm → Plan → Implement workflow with session continuity                                                        |
+| [octto](https://github.com/vtemian/octto)                                                          | Interactive browser UI for AI brainstorming with multi-question forms                                                            |
+| [sorax-sentry-monitor](https://github.com/stolinski/sorax-sentry-monitor)                    | Trace and debug your AI agents with Sentry AI Monitoring                                                                         |
+| [sorax-firecrawl](https://github.com/firecrawl/sorax-firecrawl)                              | Web scraping, crawling, and search via the Firecrawl CLI                                                                         |
+| [sorax-jfrog-plugin](https://github.com/jfrog/sorax-jfrog-plugin)                            | JFrog Plugin for seamless integration of SORAX users to JFrog platform                                                        |
+| [sorax-goal-plugin](https://github.com/willytop8/SORAX-goal-plugin)                          | Session-scoped `/goal` workflow that keeps objectives in context and auto-continues until complete                               |
+| [sorax-tavily](https://github.com/tavily-ai/sorax-tavily)                                    | Web search, extraction, crawling, and deep research via the Tavily CLI                                                           |
+| [sorax-supabase](https://github.com/supabase-community/sorax-supabase)                       | Supabase plugin for SORAX: account login, Management API tools, bundled Supabase agent skills, and guided Supabase MCP setup. |
+
+---
+
+## Projects
+
+| Name                                                                                       | Description                                                      |
+| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| [kimaki](https://kimaki.dev)                                                               | Discord bot to control SORAX sessions, built on the SDK       |
+| [sorax.nvim](https://github.com/NickvanDyke/sorax.nvim)                              | Neovim plugin for editor-aware prompts, built on the API         |
+| [portal](https://github.com/hosenur/portal)                                                | Mobile-first web UI for SORAX over Tailscale/VPN              |
+| [sorax.nvim](https://github.com/sudo-tee/sorax.nvim)                                 | Neovim frontend for sorax - a terminal-based AI coding agent  |
+| [ai-sdk-provider-sorax-sdk](https://github.com/ben-vargas/ai-sdk-provider-sorax-sdk) | Vercel AI SDK provider for using SORAX via @opencode-ai/sdk   |
+| [OpenChamber](https://github.com/btriapitsyn/openchamber)                                  | Web / Desktop App and VS Code Extension for SORAX             |
+| [SORAX-Obsidian](https://github.com/mtymek/sorax-obsidian)                           | Obsidian plugin that embeds SORAX in Obsidian's UI            |
+| [OpenWork](https://github.com/different-ai/openwork)                                       | An open-source alternative to Claude Cowork, powered by SORAX |
+| [ocx](https://github.com/kdcokenny/ocx)                                                    | SORAX extension manager with portable, isolated profiles.     |
+| [CodeNomad](https://github.com/NeuralNomadsAI/CodeNomad)                                   | Desktop, Web, Mobile and Remote Client App for SORAX          |
+
+---
+
+## Agents
+
+| Name                                                              | Description                                                  |
+| ----------------------------------------------------------------- | ------------------------------------------------------------ |
+| [Agentic](https://github.com/Cluster444/agentic)                  | Modular AI agents and commands for structured development    |
+| [sorax-agents](https://github.com/darrenhinde/sorax-agents) | Configs, prompts, agents, and plugins for enhanced workflows |

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=SORAX
+Exec=/opt/SORAX/ai.sorax %U
+Terminal=false
+Type=Application
+Icon=ai.sorax
+StartupWMClass=ai.sorax.desktop
+NoDisplay=true
+Comment=Open source AI coding agent
+Categories=Development;

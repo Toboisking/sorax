@@ -1,0 +1,78 @@
+---
+title: Экосистема
+description: Проекты и интеграции, созданные с помощью SORAX.
+---
+
+Коллекция проектов сообщества, построенных на SORAX.
+
+:::note
+Хотите добавить свой проект, связанный с SORAX, в этот список? Разместите PR.
+:::
+
+Вы также можете посетить [awesome-sorax](https://github.com/awesome-sorax/awesome-sorax) и [sorax.cafe](https://sorax.cafe) — хаб, объединяющий экосистему и сообщество.
+
+---
+
+## Плагины
+
+| Имя                                                                                                | Описание                                                                                                                                         |
+| -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [sorax-daytona](https://github.com/daytonaio/daytona/tree/main/libs/sorax-plugin)            | Автоматически запускайте сеансы SORAX в изолированных песочницах Daytona с синхронизацией git и предварительным просмотром в реальном времени |
+| [sorax-helicone-session](https://github.com/H2Shami/sorax-helicone-session)                  | Автоматически внедрять заголовки сеансов Helicone для группировки запросов                                                                       |
+| [sorax-type-inject](https://github.com/nick-vi/sorax-type-inject)                            | Автоматическое внедрение типов TypeScript/Svelte в файлы, считываемые с помощью инструментов поиска                                              |
+| [sorax-openai-codex-auth](https://github.com/numman-ali/sorax-openai-codex-auth)             | Используйте подписку ChatGPT Plus/Pro вместо кредитов API                                                                                        |
+| [sorax-gemini-auth](https://github.com/jenslys/sorax-gemini-auth)                            | Используйте существующий план Gemini вместо выставления счетов через API                                                                         |
+| [sorax-antigravity-auth](https://github.com/NoeFabris/sorax-antigravity-auth)                | Используйте бесплатные модели Antigravity вместо выставления счетов через API                                                                    |
+| [sorax-devcontainers](https://github.com/athal7/sorax-devcontainers)                         | Многоветвевая изоляция контейнеров разработки с мелкими клонами и автоматическим назначением портов                                              |
+| [sorax-google-antigravity-auth](https://github.com/shekohex/sorax-google-antigravity-auth)   | Плагин Google Antigravity OAuth с поддержкой поиска Google и более надежной обработкой API                                                       |
+| [sorax-dynamic-context-pruning](https://github.com/Tarquinen/sorax-dynamic-context-pruning)  | Оптимизируйте использование токенов за счет сокращения выходных данных устаревших инструментов                                                   |
+| [sorax-vibeguard](https://github.com/inkdust2021/sorax-vibeguard)                            | Скрывайте секреты/PII, заменяя их плейсхолдерами в стиле VibeGuard перед отправкой в LLM; восстанавливайте локально                              |
+| [sorax-websearch-cited](https://github.com/ghoulr/sorax-websearch-cited.git)                 | Добавьте встроенную поддержку веб-поиска для поддерживаемых поставщиков в стиле Google                                                           |
+| [sorax-pty](https://github.com/shekohex/sorax-pty.git)                                       | Позволяет агентам ИИ запускать фоновые процессы в PTY и отправлять им интерактивные данные                                                       |
+| [sorax-shell-strategy](https://github.com/JRedeker/sorax-shell-strategy)                     | Инструкции для неинтерактивных shell-команд — предотвращают зависания из-за операций, зависящих от TTY                                           |
+| [sorax-wakatime](https://github.com/angristan/sorax-wakatime)                                | Отслеживайте использование SORAX с помощью Wakatime                                                                                           |
+| [sorax-md-table-formatter](https://github.com/franlol/sorax-md-table-formatter/tree/main)    | Очистка таблиц Markdown, созданных LLM                                                                                                           |
+| [sorax-morph-plugin](https://github.com/morphllm/sorax-morph-plugin)                         | Редактирование Fast Apply, поиск по кодовой базе WarpGrep и сжатие контекста через Morph                                                         |
+| [oh-my-sorax](https://github.com/code-yeongyu/oh-my-sorax)                                   | Фоновые агенты, встроенные инструменты LSP/AST/MCP, курируемые агенты, совместимость с Claude Code                                               |
+| [sorax-notificator](https://github.com/panta82/sorax-notificator)                            | Уведомления на рабочем столе и звуковые оповещения для сеансов SORAX                                                                          |
+| [sorax-notifier](https://github.com/mohak34/sorax-notifier)                                  | Уведомления на рабочем столе и звуковые оповещения о разрешениях, завершении и событиях ошибок                                                   |
+| [sorax-zellij-namer](https://github.com/24601/sorax-zellij-namer)                            | Автоматическое именование сеансов Zellij на основе искусственного интеллекта на основе контекста SORAX                                        |
+| [sorax-skillful](https://github.com/zenobi-us/sorax-skillful)                                | Разрешить агентам SORAX отложенную загрузку подсказок по требованию с обнаружением и внедрением навыков                                       |
+| [sorax-supermemory](https://github.com/supermemoryai/sorax-supermemory)                      | Постоянная память между сеансами с использованием Supermemory                                                                                    |
+| [@plannotator/sorax](https://github.com/backnotprop/plannotator/tree/main/apps/sorax-plugin) | Интерактивный обзор плана с визуальными аннотациями и возможностью совместного использования в частном или автономном режиме                     |
+| [@openspoon/subtask2](https://github.com/spoons-and-mirrors/subtask2)                              | Расширьте sorax/команды до мощной системы оркестровки с детальным управлением потоком данных                                                  |
+| [sorax-scheduler](https://github.com/different-ai/sorax-scheduler)                           | Планируйте повторяющиеся задания с помощью launchd (Mac) или systemd (Linux) с синтаксисом cron                                                  |
+| [micode](https://github.com/vtemian/micode)                                                        | Структурированный мозговой штурм → План → Реализация рабочего процесса с непрерывностью сеанса                                                   |
+| [octto](https://github.com/vtemian/octto)                                                          | Интерактивный пользовательский интерфейс браузера для мозгового штурма с помощью искусственного интеллекта с формами из нескольких вопросов      |
+| [sorax-background-agents](https://github.com/kdcokenny/sorax-background-agents)              | Фоновые агенты в стиле Claude Code с асинхронным делегированием и сохранением контекста                                                          |
+| [sorax-notify](https://github.com/kdcokenny/sorax-notify)                                    | Встроенные уведомления ОС для SORAX – узнайте, когда задачи завершены                                                                         |
+| [sorax-workspace](https://github.com/kdcokenny/sorax-workspace)                              | Комплексный пакет многоагентной оркестровки — 16 компонентов, одна установка                                                                     |
+| [sorax-worktree](https://github.com/kdcokenny/sorax-worktree)                                | Рабочие деревья git с нулевым трением для SORAX                                                                                               |
+| [sorax-sentry-monitor](https://github.com/stolinski/sorax-sentry-monitor)                    | Отслеживайте и отлаживайте ваших ИИ-агентов с помощью Sentry AI Monitoring                                                                       |
+
+---
+
+## Проекты
+
+| Имя                                                                                        | Описание                                                                                      |
+| ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| [kimaki](https://kimaki.dev)                                                               | Discord-бот для управления сеансами SORAX, созданный на базе SDK                           |
+| [sorax.nvim](https://github.com/NickvanDyke/sorax.nvim)                              | Плагин Neovim для подсказок с поддержкой редактора, созданный на основе API                   |
+| [portal](https://github.com/hosenur/portal)                                                | Мобильный веб-интерфейс для SORAX через Tailscale/VPN                                      |
+| [sorax plugin template](https://github.com/zenobi-us/sorax-plugin-template/)         | Шаблон для создания плагинов SORAX                                                         |
+| [sorax.nvim](https://github.com/sudo-tee/sorax.nvim)                                 | Интерфейс Neovim для SORAX - агент кодирования искусственного интеллекта на базе терминала |
+| [ai-sdk-provider-sorax-sdk](https://github.com/ben-vargas/ai-sdk-provider-sorax-sdk) | Поставщик Vercel AI SDK для использования SORAX через @opencode-ai/sdk                     |
+| [OpenChamber](https://github.com/btriapitsyn/openchamber)                                  | Веб-приложение или настольное приложение и расширение VS Code для SORAX                    |
+| [SORAX-Obsidian](https://github.com/mtymek/sorax-obsidian)                           | Плагин Obsidian, встраивающий SORAX в пользовательский интерфейс Obsidian                  |
+| [OpenWork](https://github.com/different-ai/openwork)                                       | Альтернатива Claude Cowork с открытым исходным кодом на базе SORAX                         |
+| [ocx](https://github.com/kdcokenny/ocx)                                                    | Менеджер расширений SORAX с переносимыми изолированными профилями                          |
+| [CodeNomad](https://github.com/NeuralNomadsAI/CodeNomad)                                   | Настольное, веб-, мобильное и удаленное клиентское приложение для SORAX                    |
+
+---
+
+## Агенты
+
+| Имя                                                               | Описание                                                                  |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [Agentic](https://github.com/Cluster444/agentic)                  | Модульные ИИ-агенты и команды для структурированной разработки            |
+| [sorax-agents](https://github.com/darrenhinde/sorax-agents) | Конфигурации, подсказки, агенты и плагины для улучшения рабочих процессов |
